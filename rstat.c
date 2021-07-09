@@ -42,7 +42,7 @@ void main() {
       fp = popen("df|tail -1|tr -s ' '|cut -d ' ' -f5", "r");
     }
     fgets(fcnt, sizeof fcnt, fp); //문자열을 받아옵니다.
-    send_data.type = 1; //전송할 데이터 타입을 설정합니다
+    send_data.type = 1; //전송할 데이터 타입을 설정합니다  이 값은 0보다 커야합니다.
     sprintf(send_data.text, "Usage>%s", fcnt);
     msgsnd(qid, &send_data, strlen(send_data.text), 0); //메시지를 agtd 서버에 전송해줍니다.
   }
