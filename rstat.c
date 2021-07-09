@@ -6,7 +6,7 @@
 #include <sys/types.h>
 
 #define BUFSIZE 50
-#define QKEY (key_t)0111
+#define QKEY (key_t)0111 # 메시지 큐 통신을 위한 key값 지정
 
 typedef struct msgq_data {
   long type;
